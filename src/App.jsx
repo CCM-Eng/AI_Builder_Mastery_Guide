@@ -726,14 +726,21 @@ export default function App() {
 
   return (
     <div style={{ minHeight: "100vh", background: "#07080f" }}>
-      {/* Top switcher bar */}
-      <div style={{ background: "#0d0e18", borderBottom: "1px solid #1c1d2e", padding: "0 16px", display: "flex", alignItems: "center", gap: 0, position: "sticky", top: 0, zIndex: 100 }}>
-        <button onClick={() => setView("mastery")} style={{ background: view === "mastery" ? "#6c63ff22" : "transparent", border: "none", borderBottom: view === "mastery" ? "2.5px solid #6c63ff" : "2.5px solid transparent", color: view === "mastery" ? "#6c63ff" : "#565670", padding: "13px 20px", cursor: "pointer", fontSize: 13, fontWeight: view === "mastery" ? 700 : 400, transition: "all 0.2s" }}>
-          ⚡ AI Builder Mastery
-        </button>
-        <button onClick={() => setView("skills")} style={{ background: view === "skills" ? "#00d4aa22" : "transparent", border: "none", borderBottom: view === "skills" ? "2.5px solid #00d4aa" : "2.5px solid transparent", color: view === "skills" ? "#00d4aa" : "#565670", padding: "13px 20px", cursor: "pointer", fontSize: 13, fontWeight: view === "skills" ? 700 : 400, transition: "all 0.2s" }}>
-          🛠 Skills Stack Reference
-        </button>
+      <div style={{ position: "sticky", top: 0, zIndex: 100 }}>
+        {/* Thin global platform bar */}
+        <div style={{ background: "#090a12", borderBottom: "1px solid #1c1d2e", padding: "8px 16px 7px", display: "flex", justifyContent: "flex-start" }}>
+          <div style={{ color: "#a8a8c6", opacity: 0.68, fontSize: 10, fontWeight: 700, letterSpacing: 2.4, textTransform: "uppercase", lineHeight: 1 }}>@CCM</div>
+        </div>
+
+        {/* Top switcher bar */}
+        <div style={{ background: "#0d0e18", borderBottom: "1px solid #1c1d2e", padding: "0 16px", display: "flex", alignItems: "center", gap: 0, overflowX: "auto" }}>
+          <button onClick={() => setView("mastery")} style={{ background: view === "mastery" ? "#6c63ff22" : "transparent", border: "none", borderBottom: view === "mastery" ? "2.5px solid #6c63ff" : "2.5px solid transparent", color: view === "mastery" ? "#6c63ff" : "#565670", padding: "13px 20px", cursor: "pointer", fontSize: 13, fontWeight: view === "mastery" ? 700 : 400, transition: "all 0.2s" }}>
+            ⚡ AI Builder Mastery
+          </button>
+          <button onClick={() => setView("skills")} style={{ background: view === "skills" ? "#00d4aa22" : "transparent", border: "none", borderBottom: view === "skills" ? "2.5px solid #00d4aa" : "2.5px solid transparent", color: view === "skills" ? "#00d4aa" : "#565670", padding: "13px 20px", cursor: "pointer", fontSize: 13, fontWeight: view === "skills" ? 700 : 400, transition: "all 0.2s" }}>
+            🛠 Skills Stack Reference
+          </button>
+        </div>
       </div>
 
       {view === "mastery"
